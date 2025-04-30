@@ -1,14 +1,19 @@
 #include <iostream>
 
-class Client //-> class for client
+class Client
 {
 	private:
-		int Fd; //-> client file descriptor
-		std::string IPadd; //-> client ip address
-	public:
-		Client(){}; //-> default constructor
-		int GetFd(){return Fd;} //-> getter for fd
+		int Fd;
+		std::string IPadd;
+		std::string nick;
+		std::string user;
 
-		void SetFd(int fd){Fd = fd;} //-> setter for fd
-		void setIpAdd(std::string ipadd){IPadd = ipadd;} //-> setter for ipadd
+	public:
+		Client(){};
+		int GetFd(){return Fd;}
+
+		void SetFd(int fd){Fd = fd;}
+		void Setnick(std::string nick) {this->nick = nick;}
+		void Setuser(std::string user) {this->user = user;}
+		void setIpAdd(std::string ipadd){IPadd = ipadd;}
 };

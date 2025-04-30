@@ -119,3 +119,28 @@ Les donnes sont enregistree dans le tableau en precisant la
 taille du tableau pour le nombre maximum d'octet a renseigner
 moins 1. La fonction renvoie le nombre d'octet lus. Si la valeur
 de retour est inferieur a 0 c'est qu'il y a eu une erreur.
+
+
+
+
+On se connecte avec le client irssi comme ca : /connect localhost 8080 mdp
+
+Toutes ces infos sont ecris dans le fd de la maniere suivante :
+CAP LS
+PASS mdp
+NAME ...
+NICK ...
+
+Et elles seront parsee a chaque fois qu'un message sera envoye via le serveur,
+le message se sur-ajoutera aux informations presente au prealable.
+
+
+
+Pour le parsing :
+
+j'itere pour tout le buffer jusqu'au '\0'
+a l'interieur de la boucle j'itere jusqu'au '\n'
+et a l'interieur de cette boucle j'itere jusqu'au 1er espace en concatenant chaque caracteres
+a la chaine de caracteres
+et je rentre dans une fonction avec str, le compteur et le buffer pour effectuer tel ou tel
+comportement en fonction de la commande stockee dans str.

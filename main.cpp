@@ -10,15 +10,17 @@ int main(int ac, char **av)
 {
 	if (ac == 3)
 	{
+		std::cout << "--- SERVER ---" << std::endl;
 		Server ser;
-		std::cout << "---- SERVER ----" << std::endl;
-		try{
-			signal(SIGINT, Server::SignalHandler); //-> catch the signal (ctrl + c)
-			signal(SIGQUIT, Server::SignalHandler); //-> catch the signal (ctrl + \)
-			ser.ServerInit(atoi(av[1])); //-> initialize the server
+		try
+		{
+			signal(SIGQUIT, Server::SignalHandler);
+			signal(SIGINT, Server::SignalHandler);
+			ser.ServerInit(atoi(av[1]), av[2]);
 		}
-		catch(const std::exception& e){
-			ser.CloseFds(); //-> close the file descriptors
+		catch(const std::exception& e)
+		{
+			ser.CloseFds();
 			std::cerr << e.what() << std::endl;
 		}
 		std::cout << "The Server Closed!" << std::endl;

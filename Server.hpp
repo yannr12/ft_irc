@@ -1,39 +1,44 @@
 #include <iostream>
-#include <vector> //-> for vector
-#include <sys/socket.h> //-> for socket()
-#include <sys/types.h> //-> for socket()
-#include <netinet/in.h> //-> for sockaddr_in
-#include <fcntl.h> //-> for fcntl()
-#include <unistd.h> //-> for close()
-#include <arpa/inet.h> //-> for inet_ntoa()
-#include <poll.h> //-> for poll()
-#include <csignal> //-> for signal()
+#include <cstdlib>
+#include <string>
+#include <unistd.h>
+#include <fcntl.h>
+#include <csignal>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <vector>
+#include <poll.h>
 #include "Clients.hpp"
-//-------------------------------------------------------//
-#define RED "\e[1;31m" //-> for red color
-#define WHI "\e[0;37m" //-> for white color
-#define GRE "\e[1;32m" //-> for green color
-#define YEL "\e[1;33m" //-> for yellow color
-//-------------------------------------------------------//
 
-class Server //-> class for server
+#define RED "\e[1;31m"
+#define WHI "\e[0;37m"
+#define GRE "\e[1;32m"
+#define YEL "\e[1;33m"
+
+class Server
 {
-private:
-	int Port; //-> server port
-	int SerSocketFd; //-> server socket file descriptor
-	static bool Signal; //-> static boolean for signal
-	std::vector<Client> clients; //-> vector of clients
-	std::vector<struct pollfd> fds; //-> vector of pollfd
-public:
-	Server(){SerSocketFd = -1;} //-> default constructor
+	private:
+		int Port;
+		int ServSocket;
+		static bool Signal;
+		char *Mdp;
+		std::vector<Client> clients;
+		std::vector<struct pollfd> fds;
 
-	void ServerInit(int port); //-> server initialization
-	void SerSocket(); //-> server socket creation
-	void AcceptNewClient(); //-> accept new client
-	void ReceiveNewData(int fd); //-> receive new data from a registered client
+	public:
+		Server(){ServSocket = -1;} 
 
-	static void SignalHandler(int signum); //-> signal handler
- 
-	void CloseFds(); //-> close file descriptors
-	void ClearClients(int fd); //-> clear clients
+		void ServerInit(int port, char *mdp);
+		void SerSocket();
+		void AcceptIncomingClient();
+		void ReceiveDataClient(int fd);
+		int	ParseData(int fd, char *buff);
+		void HandleCmd(int fd, std::string str, int i, char *buffer);
+
+		static void SignalHandler(int signum);
+	
+		void CloseFds();
+		void ClearClients(int fd);
 };
