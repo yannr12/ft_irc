@@ -4,14 +4,14 @@
 #include <unistd.h>
 #include <iostream>
 #include <cstring>
-#include "Server.hpp"
+#include "../include/Server.hpp"
 
 int main(int ac, char **av)
 {
 	if (ac == 3)
 	{
-		std::cout << "--- SERVER ---" << std::endl;
 		Server ser;
+		std::cout << "--- SERVER ---" << std::endl;
 		try
 		{
 			signal(SIGQUIT, Server::SignalHandler);
@@ -26,5 +26,5 @@ int main(int ac, char **av)
 		std::cout << "The Server Closed!" << std::endl;
 	}
 	else
-		std::cout << "Valid Args : './ircserv <port> <password>'";
+		std::cout << "Valid Args : './ircserv <port> <password>'\n";
 }
