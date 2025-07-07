@@ -1,4 +1,5 @@
-*ft_irc*
+#ft_irc
+
 📚 Description
 
 ft_irc est un serveur IRC (Internet Relay Chat) implémenté en C++98, permettant la communication instantanée via canaux et messages privés, reproduisant le comportement d’un serveur IRC conforme aux standards pour interopérabilité avec un client IRC réel.
