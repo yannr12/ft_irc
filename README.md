@@ -1,10 +1,10 @@
 # ft_irc
 
-📚 Description
+## 📚 Description
 
 ft_irc est un serveur IRC (Internet Relay Chat) implémenté en C++98, permettant la communication instantanée via canaux et messages privés, reproduisant le comportement d’un serveur IRC conforme aux standards pour interopérabilité avec un client IRC réel.<br>
 
-🚀 Fonctionnalités
+## 🚀 Fonctionnalités
 
 ✅ Gestion de multiples clients simultanés sans blocage<br>
 ✅ Authentification par mot de passe, définition de nickname et username<br>
@@ -25,7 +25,7 @@ ft_irc est un serveur IRC (Internet Relay Chat) implémenté en C++98, permettan
 ✅ Gestion des entrées/sorties non bloquantes via poll()<br>
 ✅ Gestion TCP/IP (IPv4 et IPv6)<br>
 
-⚙️ Compilation<br>
+## ⚙️ Compilation<br>
 
 Un Makefile est fourni avec les règles :
 
@@ -35,7 +35,7 @@ Compilez avec :Compilez avec :
 
 ```make```
 
-🖥️ Utilisation
+## 🖥️ Utilisation
 
 Lancez le serveur avec :
 
@@ -45,7 +45,7 @@ Lancez le serveur avec :
 
     password : Mot de passe requis pour l’authentification des clients
 
-🧪 Test
+## 🧪 Test
 
 Pour tester manuellement :
 
@@ -55,7 +55,7 @@ Utilisez Ctrl+D pour envoyer une commande fragmentée en plusieurs parties pour 
 
 Nous recommandons également d’utiliser un client IRC comme référence (HexChat, irssi, weechat) pour valider la connexion et le fonctionnement des commandes IRC standards.<br>
 
-🛠️ Prérequis Techniques
+## 🛠️ Prérequis Techniques
 
     C++98 uniquement
 
@@ -69,7 +69,7 @@ Nous recommandons également d’utiliser un client IRC comme référence (HexCh
 
     Aucune bibliothèque externe ou Boost autorisée
 
-🗂️ Structure du projet
+## 🗂️ Structure du projet
 
     src/ : Contient le code source .cpp
 
