@@ -5,12 +5,12 @@
 ft_irc est un serveur IRC (Internet Relay Chat) implémenté en C++98, permettant la communication instantanée via canaux et messages privés, reproduisant le comportement d’un serveur IRC conforme aux standards pour interopérabilité avec un client IRC réel.
 🚀 Fonctionnalités
 
-✅ Gestion de multiples clients simultanés sans blocage
-✅ Authentification par mot de passe, définition de nickname et username
-✅ Création et gestion de channels IRC
-✅ Envoi et réception de messages privés
-✅ Transmission des messages à tous les clients dans un channel
-✅ Gestion des opérateurs et utilisateurs basiques
+✅ Gestion de multiples clients simultanés sans blocage<br>
+✅ Authentification par mot de passe, définition de nickname et username<br>
+✅ Création et gestion de channels IRC<br>
+✅ Envoi et réception de messages privés<br>
+✅ Transmission des messages à tous les clients dans un channel<br>
+✅ Gestion des opérateurs et utilisateurs basiques<br>
 ✅ Commandes opérateurs implémentées :
 
     KICK : Éjecter un client du channel
@@ -21,9 +21,9 @@ ft_irc est un serveur IRC (Internet Relay Chat) implémenté en C++98, permettan
 
     MODE : Gérer modes i, t, k, o, l (invitation only, topic restriction, key, operator privilege, user limit)
 
-✅ Gestion des entrées/sorties non bloquantes via poll()
-✅ Gestion TCP/IP (IPv4 et IPv6)
-⚙️ Compilation
+✅ Gestion des entrées/sorties non bloquantes via poll()<br>
+✅ Gestion TCP/IP (IPv4 et IPv6)<br>
+⚙️ Compilation<br>
 
 Un Makefile est fourni avec les règles :
 
@@ -51,7 +51,7 @@ nc 127.0.0.1 6667
 
 Utilisez Ctrl+D pour envoyer une commande fragmentée en plusieurs parties pour vérifier la reconstruction correcte côté serveur.
 
-Nous recommandons également d’utiliser un client IRC comme référence (HexChat, irssi, weechat) pour valider la connexion et le fonctionnement des commandes IRC standards.
+Nous recommandons également d’utiliser un client IRC comme référence (HexChat, irssi, weechat) pour valider la connexion et le fonctionnement des commandes IRC standards.<br>
 🛠️ Prérequis Techniques
 
     C++98 uniquement
